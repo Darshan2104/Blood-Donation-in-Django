@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css'%}" />
+<div class="banner1">
+    <div class="w3layouts_banner1_info">
+        <h2>All Request</h2>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<table width='80%' id="customers">
+
+    <tr>
+        <th>Patient Name</th>
+        <th>Doctor Name</th>
+        <th>Blood Group</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Hospital Address</th>
+        <th>City</th>
+        <!-- <th>Update</th> -->
+    </tr>
+    {% for query in q%}
+    <tr>
+        <td><b>{{query.patient_name}}</b></td>
+        <td><b>{{query.doctor_name}}</b></td>
+        <td><b>{{query.bloodgrp}}</b></td>
+        <td><b>{{query.c_mobile}}</b></td>
+        <td><b>{{query.c_email}}</b></td>
+        <td><b>{{query.hospital_address}}</b></td>
+        <td><b>{{query.city}}</b></td>
+    </tr>
+    {% endfor %}
+</table>
+<br />
+<br />
+<br />
+<br />
+{% endblock %}

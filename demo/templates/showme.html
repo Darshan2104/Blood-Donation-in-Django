@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+{% block content %}
+<br />
+<link href="{% static 'css/profile.css'%}" rel="stylesheet" type="text/css" />
+
+{% for dest in destination %}
+{% if dest.name == user_name %}
+
+<h2 style="text-align:center">{{dest.name}}</h2>
+
+<div class="card">
+	<img src="{{dest.img.url}}" alt="photo" hight="300" style="width:100%">
+	<h3>{{dest.bloodgrp}}</h3>
+
+
+	<p>
+		Email : <b>{{dest.email}}</b>
+	</p>
+	<p>
+		Contact : <b>{{dest.mobile}}</b>
+	</p>
+	<p>
+		State : <b>{{dest.state}}</b>
+	</p>
+	<p>
+		City : <b>{{dest.city}}</b>
+	</p>
+	<p>
+		Pincode : <b>{{dest.pincode}}</b>
+	</p>
+	<p>
+		Address: <b>{{dest.address}}</b>
+	</p>
+
+
+
+	<div style="margin: 24px 0;">
+		<a href="#"><i class="fa fa-dribbble"></i></a>
+		<a href="#"><i class="fa fa-twitter"></i></a>
+		<a href="#"><i class="fa fa-linkedin"></i></a>
+		<a href="#"><i class="fa fa-facebook"></i></a>
+	</div>
+	<p><button>Contact</button></p>
+</div>
+
+<br />
+<br /><br />
+
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}

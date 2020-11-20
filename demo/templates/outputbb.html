@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css'%}" />
+<div class="banner1">
+    <div class="w3layouts_banner1_info">
+        <h2>All Doner</h2>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<table width='80%' id="customers">
+    <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+        <!-- <th>Update</th> -->
+    </tr>
+    {% for que in query%}
+    {% if que.state == state or que.city == city %}
+    <tr>
+        <td><b>{{que.name}}</b></td>
+        <td><b>{{que.bb_mobile}}</b></td>
+        <td><b>{{que.bb_email}}</b></td>
+        <td><b>{{que.bb_address}}</b></td>
+        <td><b>{{que.city}}</b></td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+</table>
+<br />
+<br />
+<br />
+<br />
+{% endblock %}

@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+{% block content %}
+<!-- banner -->
+<div class="banner-silder">
+	<div class="banner">
+		<ul>
+		</ul>
+		<ol>
+		</ol>
+		<i class="left"></i><i class="right"></i>
+		<div class="banner_wthree_agile_info">
+			<section class="rw-wrapper">
+				<div class="rw-sentence">
+					<h6><span>Donate your blood for a reason,</span></h6>
+					<h6><span> let the reason to be life</span></h6>
+
+				</div>
+			</section>
+			<div class="wthree_more">
+				<a href="donate" class="button--wayra button--border-thick button--text-upper button--size-s">Donate
+					Now</a>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- //banner -->
+
+<!-- banner-bottom -->
+<div class="banner-bottom">
+	<div class="container">
+
+		<h2 class="w3l_header">About Donation </h2>
+		<p class="quia">What is Blood Donation </p>
+		<p class="agile_para">The goals of World Blood Donor Day are: To raise awareness that individuals can save
+			lives and
+			improve the health of others by donating blood. To encourage people to donate blood voluntarily without
+			compensation.
+			To support the operation of safe and reliable blood services.</p>
+
+
+
+		<div class="col-md-2 w3_agileits_banner_bottom_grid">
+			<h5>Doner </h5>
+		</div>
+		<div class="col-md-10 w3_agileits_banner_bottom_grid_left">
+			<ul id="flexiselDemo1">
+
+				{% for dest in dests %}
+				<!-- set the variable and increment it !!!!! -->
+				<li>
+					<div class="agileits_w3layouts_banner_bottom_grid">
+						<div class="wthree_banner_bottom_grid1">
+							<img src="{{dest.img.url}}" height="155" width="230" alt=" " />
+
+							<div class="agileinfo_banner_bottom_grid1_pos">
+								<h3>{{dest.bloodgrp}}</h3>
+								<p>{{dest.city}}</p>
+							</div>
+						</div>
+						<h4>{{dest.name}}</h4>
+					</div>
+				</li>
+				{% endfor %}
+				<!--!!!!!!!!!!!!!!!! MAke It Dynamic !!!!!!!!!!!!!!!! -->
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+<!-- //banner-bottom -->
+<!-- Tooltip -->
+<!-- compare variable and print data  -->
+<div class="tooltip-content">
+
+	<div class="modal fade features-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">{{dest.name}}</h4>
+				</div>
+				<div class="modal-body">
+					<!-- Doner INformation -->
+					<img src="{{dest.img.url}}" height="350" width="250" alt="">
+
+					<h5>{{dest.bloodgrp}}</h5><br />
+					<p>
+						Email : <b>{{dest.email}}</b>
+					</p>
+					<p>
+						Contact : <b>{{dest.mobile}}</b>
+					</p>
+					<p>
+						State : <b>{{dest.state}}</b>
+					</p>
+					<p>
+						City : <b>{{dest.city}}</b>
+					</p>
+					<p>
+						Pincode : <b>{{dest.pincode}}</b>
+					</p>
+					<p>
+						Address: <b>{{dest.address}}</b>
+					</p>
+					<!-- End  -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- //Tooltip -->
+
+
+<!-- banner-bottom -->
+<div class="services">
+	<div class="container">
+		<h3 class="w3l_header two">Blood Banks</h3>
+		<p class="quia">We provid Blood</p>
+		<div class="wthree_services_bottom_left w3ls_banner_bottom_grids">
+			<div class="wthree_services_bottom_left_grid">
+
+				<!-- MAke THis Dynamic -->
+
+				{% for bb in x %}
+				<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+					<div class="agile_services_bottom_l_grid1">
+
+						<img src="{{bb.img.url}}" alt=" " height="300" width="350" />
+						<div class="w3_service_bottom_grid_pos">
+							<h3>{{bb.name}}</h3>
+						</div>
+					</div>
+					<div class="serve_info_agile two">
+						<h4>{{bb.city}} ,{{bb.state}} </h4>
+						<!-- <p>Our working Process</p> -->
+					</div>
+				</div>
+
+				{% endfor %}
+
+				<div class="clearfix"> </div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!--//services -->
+
+<!--/team-->
+<div class="team">
+	<div class="container">
+		<h3 class="w3l_header">Meet Our Team</h3>
+		<p class="quia">Who We Are</p>
+		<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+			<div class="team-info">
+				<img src="{% static 'images/suman.jpg' %}" height="470" width="350" alt="">
+				<div class="team-caption">
+					<h4>Suman vadhel</h4>
+					<p>Devloper</p>
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+			<div class="team-info">
+				<img src="{% static 'images/Darshan.jpg' %}" height="470" width="350" alt="">
+				<div class="team-caption">
+					<h4>Darshan Tank</h4>
+					<p>Lead-Devloper</p>
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+			<div class="team-info">
+				<img src="{% static 'images/kirtan.jpg' %}" height="470" width="350" alt="">
+				<div class="team-caption">
+					<h4>Kirtan Vasava</h4>
+					<p>Devloper</p>
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-rss"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix"> </div>
+	</div>
+
+</div>
+</div>
+<!--//team-->
+
+<!-- projects -->
+
+<div class="projects">
+	<div class="container">
+		<h3 class="w3l_header">Well know Hospitals</h3>
+		<p class="quia">GO and Donate </p>
+
+		<div class="wthree_services_bottom_left w3ls_banner_bottom_grids">
+			<div class="wthree_services_bottom_left_grid">
+
+				<!-- MAke THis Dynamic -->
+
+				{% for hp in y %}
+				<div class="col-md-4 w3_agileits_services_bottom_l_grid">
+					<div class="agile_services_bottom_l_grid1">
+
+						<img src="{{hp.img.url}}" alt=" " height="300" width="350" />
+						<div class="w3_service_bottom_grid_pos">
+							<h3>{{hp.email}}</h3>
+							<h3>{{hp.mobile}}</h3>
+						</div>
+					</div>
+					<div class="serve_info_agile two">
+						<h4>{{hp.name}}</h4>
+						<!-- <p>Our working Process</p> -->
+					</div>
+				</div>
+
+				{% endfor %}
+
+				<div class="clearfix"> </div>
+			</div>
+
+		</div>
+
+
+		<div class="clearfix"> </div>
+	</div>
+</div>
+</div>
+<!-- //projects -->
+<!-- THoughts  -->
+<div class="testimonials">
+	<div class="container">
+		<h3 class="w3l_header two">Great Thoughts...</h3>
+		<p class="quia">Doners words </p>
+
+		<div class="w3ls_testimonials_grids">
+			<section class="center slider">
+				<div class="agileits_testimonial_grid">
+					<div class="w3l_testimonial_grid">
+						<p>Never lose the opportunity for blood donation as it always chose someone special.</p>
+						<h4>Rosy Crisp</h4>
+						<div class="w3l_testimonial_grid_pos">
+							<img src="{% static 'images/1.png'%}" alt=" " class="img-responsive" />
+						</div>
+					</div>
+				</div>
+				<div class="agileits_testimonial_grid">
+					<div class="w3l_testimonial_grid">
+						<p>You are not important because of how long you live, you are important because of how
+							effective you live.</p>
+						<h4> Myles Munroe</h4>
+						<div class="w3l_testimonial_grid_pos">
+							<img src="{% static 'images/2.png'%}" alt=" " class="img-responsive" />
+						</div>
+					</div>
+				</div>
+				<div class="agileits_testimonial_grid">
+					<div class="w3l_testimonial_grid">
+
+						<p> I have nothing to offer but blood, toil, tears and sweat.</p>
+						<h4>Winston Churchill</h4>
+						<div class="w3l_testimonial_grid_pos">
+							<img src="{% static 'images/3.png'%}" alt=" " class="img-responsive" />
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+<!-- //THoughts -->
+
+{% endblock %}

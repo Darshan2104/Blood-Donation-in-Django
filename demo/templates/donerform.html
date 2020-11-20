@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<div class="banner1">
+    <div class="w3layouts_banner1_info">
+        <h2>Donate</h2>
+    </div>
+
+</div>
+
+<div class="clearfix"> </div>
+</div>
+<div class="banner-bottom">
+    <div class="container">
+        <h3 class="w3l_header">Provide your information</h3>
+        <p class="quia">Doner</p>
+
+        <div class="agileinfo_mail_grids">
+
+            <form action="donate" method="POST">
+                {%csrf_token%}
+                <!-- name -->
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="name" type="text" id="input-13"
+                        placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content="Name">Name</span>
+                    </label>
+                </span>
+                <!-- mobile -->
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="mobile" type="text" pattern="[0-9]{10}"
+                        id="input-13" placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato"
+                            data-content="Name">Mobile</span>
+                    </label>
+                </span>
+                <!-- email -->
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="email" type="email" id="input-14"
+                        placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-14">
+                        <span class="input__label-content input__label-content--chisato"
+                            data-content="Email">Email</span>
+                    </label>
+                </span>
+
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="country" type="text" id="input-15"
+                        placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-15">
+                        <span class="input__label-content input__label-content--chisato"
+                            data-content="Subject">Country</span>
+                    </label>
+                </span>
+
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="state" type="text" id="input-15"
+                        placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-15">
+                        <span class="input__label-content input__label-content--chisato"
+                            data-content="Subject">State</span>
+                    </label>
+                </span>
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="city" type="text" id="input-15"
+                        placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-15">
+                        <span class="input__label-content input__label-content--chisato"
+                            data-content="Subject">City</span>
+                    </label>
+                </span>
+
+                <span class="input input--chisato">
+                    <input class="input__field input__field--chisato" name="pincode" type="text" pattern="[0-9]{6}"
+                        id="input-13" placeholder=" " required="" />
+                    <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato"
+                            data-content="Name">Pincode</span>
+                    </label>
+                </span>
+
+                <span class="input input--chisato">
+                    <label>Blood Group : </label>
+                    <select id="BG" name="bloodgrp"><br>
+                        <option value="A+ve">A+ve</option>
+                        <option value="B+ve">B+ve</option>
+                        <option value="AB+ve">AB+ve</option>
+                        <option value="O+ve">O+ve</option>
+
+                        <option value="A-ve">A-ve</option>
+                        <option value="B-ve">B-ve</option>
+                        <option value="AB-ve">AB-ve</option>
+                        <option value="O-ve">O-ve</option>
+                    </select>
+
+                </span>
+                <span class="input input--chisato">
+
+                    <label>Select a Photo </label>
+                    <input type="file" id="img" name="img">
+                </span>
+                <textarea name="address" placeholder="Address....." required=""></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css'%}" />
+<div class="banner1">
+    <div class="w3layouts_banner1_info">
+        <h2>All Doner</h2>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<table width='80%' id="customers">
+
+    <tr>
+        <th>Name</th>
+        <th>Blood Group</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+
+    </tr>
+
+    {% for query in q%}
+    <tr>
+        <td><b>{{query.name}}</b></td>
+        <td><b>{{query.bloodgrp}}</b></td>
+        <td><b>{{query.mobile}}</b></td>
+        <td><b>{{query.email}}</b></td>
+        <td><b>{{query.address}}</b></td>
+        <td><b>{{query.city}}</b></td>
+    </tr>
+    {% endfor %}
+</table>
+<br />
+<br />
+<br />
+<br />
+
+{% endblock %}
+<!-- {% for emp in emp_list %}
+      <tr>
+          <td><input type="checkbox" id="emp_{{ emp.id }}" name="emp_{{ emp.id }}"></td>
+          <td>{{ emp.id }}</td>
+          Because you defined the emp_detail view has two parameter in the url, one is user_name, the other is mobile_number.So use Django url tag to render it. -->
+<!-- <td><a href="{% url 'dept_emp:emp_detail' user_name=emp.user.username mobile_number=emp.emp_mobile %}">{{ emp.user.username }}</a></td>
+          <td>{{ emp.get_dept_values }}</td>
+          <td>{{ emp.emp_mobile }}</td>
+          <td>{{ emp.emp_salary }}</td>
+          <td>{{ emp.emp_onboard_date }}</td>
+      </tr> 
+{% endfor %} -->
